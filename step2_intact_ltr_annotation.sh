@@ -36,12 +36,12 @@ gt ltrdigest -outfileprefix ltrdigest ../ltrharvest/ltrharvest_sorted.gff ../ind
 # REXdb (Viridiplantae v3.0)
 echo "running Protein Domains Finder"
 cd ../REXdb
-python $scripts/extract_LTR-RT_inner_seqs.py ../index/$1.fasta \
+python2 $scripts/extract_LTR-RT_inner_seqs.py ../index/$1.fasta \
 ../ltrdigest/ltrdigest_tabout.csv ltrdigest_inner.fasta
 
 python3 $scripts/dante.py \
 -nld False -q ltrdigest_inner.fasta -pdb $Viridiplantae/Viridiplantae_v3.0_ALL_protein-domains.fasta \
 -cs $Viridiplantae/Viridiplantae_v3.0_ALL_classification -oug ltrdigest_inner_domains.gff -dir ./
 
-python $scripts/Intact_gypsy_copia_REXdb.py ltrdigest_inner_domains.gff intact_REXdb.csv
+python2 $scripts/Intact_gypsy_copia_REXdb.py ltrdigest_inner_domains.gff intact_REXdb.csv
 
