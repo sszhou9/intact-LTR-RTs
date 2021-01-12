@@ -39,7 +39,7 @@ cd ../REXdb
 python $scripts/extract_LTR-RT_inner_seqs.py ../index/$1.fasta \
 ../ltrdigest/ltrdigest_tabout.csv ltrdigest_inner.fasta
 
-python3 $scripts/protein_domains.py \
+python3 $scripts/dante.py \
 -nld False -q ltrdigest_inner.fasta -pdb $Viridiplantae/Viridiplantae_v3.0_ALL_protein-domains.fasta \
 -cs $Viridiplantae/Viridiplantae_v3.0_ALL_classification -oug ltrdigest_inner_domains.gff -dir ./
 
